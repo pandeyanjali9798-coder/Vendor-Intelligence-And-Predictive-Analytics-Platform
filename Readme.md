@@ -28,10 +28,10 @@ This project aims to enhance procurement efficiency by **analyzing vendor perfor
 
 <h2><a class="anchor" id="business-problem--key-features"></a>❗ Business Problem & Key Features</h2>
 
-1. Vendor Performance Analysis
+**1. Vendor Performance Analysis**
 
-**Objective:**
-Analyze vendor performance to identify procurement inefficiencies, profitability trends, inventory-related issues, and opportunities for cost optimization.
+   **Objective:**
+   Analyze vendor performance to identify procurement inefficiencies, profitability trends, inventory-      related issues, and opportunities for cost optimization.
 
 **Use of this analysis:**
 
@@ -43,27 +43,27 @@ Analyze vendor performance to identify procurement inefficiencies, profitability
 
 
 
-2. Freight cost prediction (Regression model)
+**2. Freight cost prediction (Regression model)**
 
-**Objective:**
-   Predicting the expected freight cost for the vendor invoice using invoice value and the historical behaviour of the dataset.
+   **Objective:**
+      Predicting the expected freight cost for the vendor invoice using invoice value and the historical behaviour of the dataset.
 
 **Use of this model:**
 * Freight is a non-trivial component of landed cost.
 * Poor freight estimates distort margin and inventory planning.
-* Automating freight estimation helps procurement teams forecast true cost before invoice arrival
-![Image Description](image/freight_cost_prediction.png)
+* Automating freight estimation helps procurement teams forecast true cost before invoice arrival.
+![Image Description](images/freight_cost_prediction.png)
 
-3. Invoice risk flagging (Classification model)
+**3. Invoice risk flagging (Classification model)**
 
-**Objective:**
+   **Objective:**
    Predict whether vendor invoice should be flagged for manual approval or not due to abnormal cost, freight, and delivery patterns.
 
 **Use of this model:**
 * Manual Invoice review is time-consuming and does not scale with transaction volume.
 * Abnormal freight charges, pricing deviation, or delivery delays often indicate errors, disputes, or compliance risks.
-* An automated flagging system enables finance teams to focus attention on high-risk invoice while allowing low-risk invoice to be processed automatically
-![Image Description](image/invoice_flagging.png)
+* An automated flagging system enables finance teams to focus attention on high-risk invoice while allowing low-risk invoice to be processed automatically.
+![Image Description](images/invoice_flagging.png)
 
 ---
 
@@ -131,7 +131,8 @@ Data is stored in a relational MySQL database (`inventory_database`) consisting 
 **Classification models(Invoice Flagging)**
   - Logistic Regression (Baseline model)
   - Decision Tree Classifier
-  - Random Forest Classifier (Final model with GridSearchCV)
+  - Random Forest Classifier (Final model with GridSearchCV)<br>
+
 - Hyperparameter tuning is performed using GridSearchCV with F1-score to handle the class imbalance.
 
 ---
@@ -153,7 +154,8 @@ Data is stored in a relational MySQL database (`inventory_database`) consisting 
 
 <h2><a class="anchor" id="project-structure"></a>🗂️ Project Structure</h2>
 
-\`\`\`
+
+```text
 Vendor-Intelligence-Platform/
 │
 ├── data/
@@ -167,34 +169,56 @@ Vendor-Intelligence-Platform/
 │   └── business_report.pdf
 │
 ├── ml/
-│   ├── freight_cost_prediction
-│   ├── invoice_flagging
-│   ├── inference
-│   └──  models
-│
+│   ├── freight_cost_prediction/
+│   │   ├── data_preprocessing.py
+│   │   ├── model_evalution.py
+│   │   └── train.py
+│   │
+│   ├── invoice_flagging/
+│   │   ├── data_preprocessing.py
+│   │   ├── model_evalution.py
+│   │   └── train.py
+│   │
+│   ├── inference/
+│   │   ├── predict_freight.py
+│   │   └── predict_invoice.py
+│   │
+│   └── models/
+│       ├── predict_freight_model.pkl
+│       ├── predict_flag_invoice.pkl
+│       └── scaler.pkl
 │
 ├── app.py
-│
 └── README.md
-\`\`\`
+```
 
 ---
 
 <h2><a class="anchor" id="how-the-models-work"></a>⚙️ How the Models Work</h2>
 
 1. Clone the repository:
-
+   ```bash
+   https://github.com/pandeyanjali9798-coder/Vendor-Intelligence-And-Predictive-Analytics-Platform.git
+   ```
 
 2. Train and save the best fit model:
-   (ml/freight_cost_prediction/train.py)
-   (ml/invoice_flagging/train.py)
+   ```bash
+   python (ml/freight_cost_prediction/train.py)
+   python (ml/invoice_flagging/train.py)
+   ```
 
 3. Test model:
-    (ml/inference/predict_freight.py)
-    (inference/predict_invoice_flag.py)
+   ```bash
+   python (ml/inference/predict_freight.py)
+   python (inference/predict_invoice_flag.py)
+   ```
 
 4. Open application:
+   ```bash
    streamlit run (app.py)
+   ```
+5. 
+
 
 ---
 
@@ -224,10 +248,10 @@ Check the report: analytics/business_report.pdf
 
 <h2><a class="anchor" id="author--contact"></a>👤 Author & Contact</h2>
 
-**Anjali Pandey**
-✉️ Email: pandeyanjali9798@gmail.com
-🔗[LinkIn]:
-🔗
+**👤 Anjali Pandey** <br>
+✉️ Email: pandeyanjali9798@gmail.com <br>
+🔗[LinkIn]: [View Profile] https://www.linkedin.com/in/anjali-kumari-530467390
+
 
 ---
 
