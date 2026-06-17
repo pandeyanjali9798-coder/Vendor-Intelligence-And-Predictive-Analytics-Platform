@@ -219,8 +219,10 @@ Vendor-Intelligence-Platform/
    ```bash
    streamlit run (app.py)
    ```
-5. 
-
+5. link of deployed app:
+   ```bash
+   https://vendor-intelligence-and-predictive-analytics-platform-vgylqoed.streamlit.app/
+   ```
 
 ---
 
