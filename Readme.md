@@ -162,7 +162,6 @@ Vendor-Intelligence-Platform/
 ├── script/
 ├── notebooks/
 ├── images/
-├── requirement.txt 
 │
 ├── analytics/
 │   ├── get_vendor_summary.py
@@ -189,7 +188,9 @@ Vendor-Intelligence-Platform/
 │       ├── predict_flag_invoice.pkl
 │       └── scaler.pkl
 │
-├── app.py
+├── streamlit_file
+|     ├── requirement.txt 
+|     └── app.py
 └── README.md
 ```
 
