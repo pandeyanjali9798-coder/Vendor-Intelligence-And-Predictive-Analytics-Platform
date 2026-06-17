@@ -1,6 +1,9 @@
 
 import joblib
 from pathlib import Path
+from dotenv import load_dotenv
+from sqlalchemy.engine import URL
+import os
 
 from data_preprocessing import load_vendor_invoice_data, prepare_features, split_data
 from model_evalution import (
@@ -10,8 +13,19 @@ from model_evalution import (
     evaluate_model
 )
 
+load_dotenv()  # reads your .env file
+
+db_url = URL.create(
+    drivername="mysql+pymysql",
+    username=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    host=os.getenv("DB_HOST"),
+    port=int(os.getenv("DB_PORT")),
+    database=os.getenv("DB_NAME")
+)
+
 def main():
-    db_path = "mysql+pymysql://root:Anjali%409798@127.0.0.1:3306/inventory_dataset_db"
+    db_path = db_url
     model_dir = Path("models")
     model_dir.mkdir(exist_ok=True)
     # load dataset

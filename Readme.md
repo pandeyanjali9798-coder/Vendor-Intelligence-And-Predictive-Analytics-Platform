@@ -162,6 +162,7 @@ Vendor-Intelligence-Platform/
 ├── script/
 ├── notebooks/
 ├── images/
+├── requirement.txt 
 │
 ├── analytics/
 │   ├── get_vendor_summary.py
@@ -243,7 +244,6 @@ Vendor-Intelligence-Platform/
 - Improve inventory planning to reduce unsold stock and free up working capital.
 - Prioritize vendors with higher profit margins while maintaining strong sales performance.
 
-Check the report: analytics/business_report.pdf
 ---
 
 <h2><a class="anchor" id="author--contact"></a>👤 Author & Contact</h2>
