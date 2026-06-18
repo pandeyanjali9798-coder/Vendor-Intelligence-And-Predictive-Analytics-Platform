@@ -221,7 +221,7 @@ Vendor-Intelligence-Platform/
    ```
 5. link of deployed app:
    ```bash
-   https://vendor-intelligence-and-predictive-analytics-platform-vgylqoed.streamlit.app/
+   https://vendor-intelligence-and-predictive-analytics-platform-vgylqoed.streamlit.app
    ```
 
 ---
